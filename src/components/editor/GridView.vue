@@ -1,7 +1,7 @@
 <template>
   <div>
     <div style="text-align: center;">
-      <div class="site-title"> Bugs in the City</div>
+      <div class="site-title"> Bugs of the City</div>
       <span v-if="!preview">
         <button class="btn btn-outline-primary" @click="addTitleGridItem"> H1 </button>
         <button class="btn btn-outline-primary" @click="addContentGridItem"> Content </button>
