@@ -21,7 +21,7 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
-import _ from 'lodash'
+import map from 'lodash/map'
 export default {
   props: ['preview', 'contenteditable', 'item', 'itemIndex'],
   data () {
@@ -35,7 +35,7 @@ export default {
       'saveItem'
     ]),
     changeToHeading (data) {
-      const updatedHeadingSelection = _.map(this.item.headings, (item, key) => key === data.headingKey)
+      const updatedHeadingSelection = map(this.item.headings, (item, key) => key === data.headingKey)
       this.saveHeadings({ values: updatedHeadingSelection, itemIndex: this.itemIndex })
     },
     save (e) {
