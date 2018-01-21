@@ -1,5 +1,4 @@
-/* eslint-disable */
+// Getter to retrieve state data
 export const getResources = (state) => {
   return state.resources
 }
-export const isLoading = (state) => state.isLoading

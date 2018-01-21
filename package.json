@@ -2,7 +2,7 @@
   "name": "bugsvue",
   "version": "1.0.0",
   "description": "Bugs City Grid with Vue-Grid-Layout",
-  "author": "Krutie Patel <krutie.patel@gmail.com>",
+  "author": "Krutie Patel <krutie@pariksha.io>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -11,7 +11,6 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "firebase": "^4.8.1",
     "vue": "^2.5.2",
     "vue-grid-layout": "^2.1.11",
     "vue-router": "^3.0.1",

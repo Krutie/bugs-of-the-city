@@ -1,3 +1,4 @@
+// Lib to create guid
 export const guid = () => {
   return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4()
 }

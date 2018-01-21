@@ -1,5 +1,4 @@
-/* eslint-disable */
+// Defining the state data here
 export default {
-  resources: {},
-  isLoading: false
+  resources: {}
 }

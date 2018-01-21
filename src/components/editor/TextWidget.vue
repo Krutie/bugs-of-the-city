@@ -10,12 +10,12 @@
       </div>
     </div>
     <div :id="item.i" :contenteditable="contenteditable" style="padding:6px 10px;" v-on:paste.prevent="pasteData" 
-    v-model="item.title" @blur="dummySave"
+    v-model="item.title" @blur="save"
           :class="[{ 'heading1': item.headings.h1,
             'heading2': item.headings.h2, 
             'heading3': item.headings.h3, 
             }]" >
-            {{ item.title }}  <!-- {{ item }} -->
+            {{ item.title }} 
       </div>
   </div>
 </template>
@@ -30,24 +30,24 @@ export default {
     }
   },
   methods: {
-    ...mapActions({
-      saveHeadings: 'saveHeadings',
-      saveItem: 'saveItem'
-    }),
+    ...mapActions([
+      'saveHeadings',
+      'saveItem'
+    ]),
     changeToHeading (data) {
-      let updatedHeadingSelection = _.map(this.item.headings, (item, key) => {
-        if (key === data.headingKey) {
-          return true
-        } else {
-          return false
-        }
-      })
+      const updatedHeadingSelection = _.map(this.item.headings, (item, key) => key === data.headingKey)
       this.saveHeadings({ values: updatedHeadingSelection, itemIndex: this.itemIndex })
     },
-    dummySave (e) {
+    save (e) {
       this.item.title = e.target.innerText
       this.saveItem({ item: this.item, index: this.itemIndex })
     }
   }
 }
 </script>
+
+<style scoped>
+  [contenteditable]:focus {
+    outline: 0px solid transparent;
+  }
+</style>

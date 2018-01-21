@@ -33,10 +33,3 @@ export default {
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-  [contenteditable]:focus {
-    outline: 0px solid transparent;
-  }
-</style>

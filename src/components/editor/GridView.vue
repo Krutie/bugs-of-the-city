@@ -13,24 +13,24 @@
       </button>
     </div>
     <hr>
-    <grid-layout :layout="resources"
+    <grid-layout :layout="getResources"
       :col-num="12" :row-height="30" :is-draggable="isDraggable" :is-resizable="isResizable"
       :is-mirrored="false" :vertical-compact="true" :margin="[5, 5]"
       :use-css-transforms="true">
-      <grid-item v-for="(item, index) in resources" :key="index" :class="{ 'editMode' : !preview }"
+      <grid-item v-for="(item, index) in getResources" :key="index" :class="{ 'editMode' : !preview }"
       :autoSize="true" :x="item.x" :y="item.y" :w="item.w" :h="item.h" :i="item.i">
 
         <div v-if="!preview" @click="removeItem({key: index})" style="position: absolute; bottom: 0px; left: 4px;">
           <i class="fa fa-trash" aria-hidden="true"></i>
         </div> 
-        <textgrid v-if="item.type == 'title'" :preview="preview"
-        :contenteditable="contenteditable" :item="item" :itemIndex="index" ></textgrid>
+        <text-widget v-if="item.type == 'title'" :preview="preview"
+        :contenteditable="contenteditable" :item="item" :itemIndex="index" ></text-widget>
 
-        <textareagrid v-if="item.type == 'content'" :preview="preview"
-        :contenteditable="contenteditable" :item="item" :itemIndex="index"></textareagrid>
+        <text-area-widget v-if="item.type == 'content'" :preview="preview"
+        :contenteditable="contenteditable" :item="item" :itemIndex="index"></text-area-widget>
 
-        <imagegrid v-if="item.type == 'image'"  :preview="preview"
-        :contenteditable="contenteditable" :item="item" :itemIndex="index"></imagegrid>
+        <image-widget v-if="item.type == 'image'"  :preview="preview"
+        :contenteditable="contenteditable" :item="item" :itemIndex="index"></image-widget>
 
       </grid-item>
     </grid-layout>
@@ -38,15 +38,14 @@
 </template>
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import textgrid from './textGrid'
-import textareagrid from './textareaGrid'
-import imagegrid from './imageGrid'
-import VueGridLayout from 'vue-grid-layout'
-let GridLayout = VueGridLayout.GridLayout
-let GridItem = VueGridLayout.GridItem
+import TextWidget from './TextWidget'
+import TextAreaWidget from './TextAreaWidget'
+import ImageWidget from './ImageWidget'
+import { GridLayout, GridItem } from 'vue-grid-layout'
+
 export default {
   name: 'gridview',
-  components: { GridLayout, GridItem, textgrid, textareagrid, imagegrid },
+  components: { GridLayout, GridItem, TextWidget, TextAreaWidget, ImageWidget },
   data () {
     return {
       isDraggable: false,
@@ -56,17 +55,17 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({
-      resources: 'getResources'
-    })
+    ...mapGetters([
+      'getResources'
+    ])
   },
   methods: {
-    ...mapActions({
-      addTitleGridItem: 'addTitleGridItem',
-      addContentGridItem: 'addContentGridItem',
-      addImageGridItem: 'addImageGridItem',
-      removeItem: 'removeItem'
-    }),
+    ...mapActions([
+      'addTitleGridItem',
+      'addContentGridItem',
+      'addImageGridItem',
+      'removeItem'
+    ]),
     disableGrid () {
       this.isDraggable = !this.isDraggable
       this.isResizable = !this.isResizable

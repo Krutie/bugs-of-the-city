@@ -6,7 +6,7 @@ import * as mutations from './mutations'
 import * as actions from './actions'
 
 Vue.use(Vuex)
-
+// Initializing and exporting the vuex store with state, getters, mutations and actions
 export default new Vuex.Store({
   state,
   getters,
