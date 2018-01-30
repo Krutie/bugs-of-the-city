@@ -1,6 +1,10 @@
-# bugsvue
+# Bugs of the City
 
-> Bugs City Grid with Vue-Grid-Layout
+> Bugs of the City with Vue-Grid-Layout
+
+This mini project serves as an experiment for bitesize eLearning platform, [Pariksha](https://www.pariksha.io/).
+
+[Read supporting article on Medium](https://blog.prototypr.io/grid-layout-editor-for-vue-js-a-research-project-for-pariksha-io-e3445025d21e)
 
 ## Build Setup
 
