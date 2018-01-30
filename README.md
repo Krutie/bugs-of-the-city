@@ -4,9 +4,9 @@
 
 This mini project serves as an experiment for bitesize eLearning platform, [Pariksha](https://www.pariksha.io/).
 
-[Read supporting article on Medium](https://blog.prototypr.io/grid-layout-editor-for-vue-js-a-research-project-for-pariksha-io-e3445025d21e)
+### [Read supporting article on Medium](https://blog.prototypr.io/grid-layout-editor-for-vue-js-a-research-project-for-pariksha-io-e3445025d21e)
 
-# [Demo](http://vue-grid-layout.surge.sh/#/)
+## [Demo](http://vue-grid-layout.surge.sh/#/)
 
 ![Image](https://cdn-images-1.medium.com/max/800/1*oNqKKJNYAy45vos1C0VJkg.png)
 
