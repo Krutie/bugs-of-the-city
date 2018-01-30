@@ -1,6 +1,6 @@
-# Bugs of the City
+# Drag-n-Drop Layout Editor Prototype
 
-> Bugs of the City with Vue-Grid-Layout
+> Made with Vue-Grid-Layout and Vue Js
 
 This mini project serves as an experiment for bitesize eLearning platform, [Pariksha](https://www.pariksha.io/).
 
